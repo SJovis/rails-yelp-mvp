@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Restaurants</li>
+  </ol>
+</nav>
+
+<div class="list-group ml-3">
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant.name, restaurant_path(restaurant), class: 'list-group-item list-group-item-action'%>
+  <% end %>
+</div>
+
+<%= link_to 'Add restaurant', restaurants_new_path, class: 'btn btn-primary ml-3 mt-3' %>
