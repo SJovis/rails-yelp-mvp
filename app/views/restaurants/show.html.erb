@@ -10,7 +10,8 @@
     <div class="card-body">
       <h5 class="card-title"><%= @restaurant.name %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category.capitalize %> Cuisine</h6>
-      <p class="card-text"><%= @restaurant.address %> - <%= @restaurant.phone_number %></p>
+      <p class="card-text"><strong>Address:</strong> <%= @restaurant.address %></p>
+      <p class="card-text"><strong>Contact:</strong> <%= @restaurant.phone_number %></p>
       <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
     </div>
   </div>
