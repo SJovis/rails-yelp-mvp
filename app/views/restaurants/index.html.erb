@@ -4,10 +4,10 @@
   </ol>
 </nav>
 
-<div class="list-group ml-3">
+<div class="list-group">
   <% @restaurants.each do |restaurant| %>
     <%= link_to restaurant.name, restaurant_path(restaurant), class: 'list-group-item list-group-item-action'%>
   <% end %>
 </div>
 
-<%= link_to 'Add restaurant', restaurants_new_path, class: 'btn btn-primary ml-3 mt-3' %>
+<%= link_to 'Add restaurant', restaurants_new_path, class: 'btn btn-primary mt-3 mb-3' %>

@@ -5,22 +5,24 @@
   </ol>
 </nav>
 
-<div class="card ml-3" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= @restaurant.name %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category.capitalize %> Cuisine</h6>
-    <p class="card-text"><%= @restaurant.address %> - <%= @restaurant.phone_number %></p>
-    <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+<div class="d-flex mt-5 pb-3">
+  <div class="card" style="width: 18rem; height: 100%;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @restaurant.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category.capitalize %> Cuisine</h6>
+      <p class="card-text"><%= @restaurant.address %> - <%= @restaurant.phone_number %></p>
+      <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+    </div>
   </div>
-</div>
-<div class="card-body">
-  <h5 class="card-title">Reviews</h5>
-  <ul class="list-group list-group-flush">
-    <% @restaurant.reviews.each do |review| %>
-      <li class="list-group-item">
-        <p>Rating: <%= review.rating %></p>
-        <p><%= review.content %></p>
-      </li>
-    <% end %>
-  </ul>
+  <div class="card-body pt-0">
+    <h5 class="card-title bg-white p-2">Reviews</h5>
+    <ul class="list-group list-group-flush">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item">
+          <p>Rating: <% review.rating.times do %> <i class="fas fa-star text-warning"></i> <% end %></p>
+          <p><%= review.content %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
