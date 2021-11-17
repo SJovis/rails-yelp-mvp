@@ -12,12 +12,11 @@
       <h6 class="card-subtitle mb-2 text-muted"><%= @restaurant.category.capitalize %> Cuisine</h6>
       <p class="card-text"><strong>Address:</strong> <%= @restaurant.address %></p>
       <p class="card-text"><strong>Contact:</strong> <%= @restaurant.phone_number %></p>
-      <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
     </div>
   </div>
   <div class="card-body pt-0">
     <h5 class="card-title bg-white p-2">Reviews</h5>
-    <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush mb-3">
       <% @restaurant.reviews.each do |review| %>
         <li class="list-group-item">
           <p>Rating: <% review.rating.times do %> <i class="fas fa-star text-warning"></i> <% end %></p>
@@ -25,5 +24,6 @@
         </li>
       <% end %>
     </ul>
+    <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
   </div>
 </div>
