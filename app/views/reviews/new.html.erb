@@ -1,0 +1,13 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <%= link_to "Restaurants", restaurants_path, class: "breadcrumb-item" %>
+    <%= link_to @restaurant.name, restaurant_path(@restaurant), class: "breadcrumb-item" %>
+    <li class="breadcrumb-item active" aria-current="page">Add review</li>
+  </ol>
+</nav>
+
+<%= simple_form_for [ @restaurant, @review ] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+<% end %>
